@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>echarts</title>
+	<style>
+		.table-box, .echart-box {
+			width: 100%;
+			height: 300px;
+		}
+		#table {
+			width: 100%;
+			height: 100%;
+			border-color: #eee;
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="table-box">
+		<table id="table" cellpadding="0" cellspacing="0" border="1"> 
+			<tr>
+				<th>xx</th>
+				<th>xx</th>
+				<th>xx</th>
+				<th>xx</th>
+			</tr>
+			<tr>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+			</tr>
+			<tr>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+			</tr>
+			<tr>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+			</tr>
+			<tr>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+				<td>zz</td>
+			</tr>
+		</table>
+	</div>
+	<div class="echart-box">
+		<div id="main" style="width: 100%;height:100%;"></div>
+	</div>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="./echarts.js"></script>
+<script>
+	$(function(){
+		echart()
+	})
+	function echart(){
+		var myChart = echarts.init(document.getElementById('main'));
+		var option = {
+		    xAxis: {
+		        type: 'category',
+		        data: ['2019-07-20', '2019-07-20', '2019-07-21', '2019-07-22', '2019-07-23', '2019-07-24', '2019-07-25']
+		    },
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [{
+		        data: [820, 932, 901, 934, 1290, 1330, 1320],
+		        type: 'line'
+		    }]
+		};
+		myChart.setOption(option);
+	}
+</script>
+</html>
